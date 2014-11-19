@@ -10,3 +10,4 @@ install:
 script:
 - python -m unittest test_SaleItemUnitTest.py -v
 - python -m unittest test_ShippingLogic.py -v
+- python -m unittest test_ShippingLogicUnitTest -v
