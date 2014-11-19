@@ -8,7 +8,7 @@ WillametteShippingCalculator
   * low weight is inclusive. high weight is exclusive
   * over $100 cost, free shipping (no matter the weight)
   * Some items are on special and have free shipping!
-    * don't count in weight
+    * don't count in weight ;)
 
 Command Line Options
 ====================
