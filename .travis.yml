@@ -8,5 +8,4 @@ install:
 - pip install simplejson
 # command to run tests
 script:
-- python -m unittest unittestExample -v
-- python -m doctest -v DocTestExample.py
+- python -m unittest test_SaleItemUnitTest.py -v
