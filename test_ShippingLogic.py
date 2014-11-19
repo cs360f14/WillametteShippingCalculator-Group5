@@ -8,20 +8,23 @@
 # Assignment:	Python Classes
 # Purpose:		
 ################################
+
 import unittest 
 from ShippingLogic import *
 from basket import *
 from itemStore import *
 
 
-class TestShippingLogic:
+class TestShippingLogic (unittest.TestCase):
 	def setUp (self):
 		self.theShippingLogic = ShippingLogic ()
 		
-	def test_calcWeightForCost (self):
-		testBasket = basket ()
-		testItemStore = itemStore ('dataFiles/normalSales.csv')
-		testSaleItem = SaleItem (10, 2, 'Test Item', False, 1)
-		testBasket.addItem  
-		
+	def test_calcCostForShippingByWeight (self):
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (.1), 6)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (.9), 6)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (1), 8)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (4), 8)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (5), 11)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (10), 11)
+		self.assertEqual (self.theShippingLogic.calcCostForShippingByWeight (101), 1)
 		
