@@ -2,13 +2,14 @@
 
 ################################
 # File Name:	test_SaleItemUnitTest.py
-# Author:		Chadd Williams
+# Author:		Chadd Williams - Huyen Tran
 # Date:			11/17/2014
 # Class:		CS 360
 # Assignment:	Lecture Examples
 # Purpose:		Unittest for SaleItem
 ################################
 
+# python3 -m unittest test_SaleItemUnitTest -v
 
 import unittest
 from SaleItem import SaleItem
@@ -33,6 +34,14 @@ class TestSaleItem(unittest.TestCase):
 		pass # nothing to do
 
 
+	def test_GetCost(self):
+		self.assertEqual(self.theSaleItem.getCost(), '10')
+	
+	def test_GetWeight(self):
+		self.assertEqual(self.theSaleItem.getWeight(), '10')
+	
+	def test_GetTitle(self):
+		self.assertEqual(self.theSaleItem.getTitle(), 'TestItem')
 
 	def test_GetFreeShipping(self):
 		
@@ -44,3 +53,6 @@ class TestSaleItem(unittest.TestCase):
 		
 		itemWithFreeShipping = SaleItem(['10', '2', 'FSTestItem', 'FS'])
 		self.assertEqual(itemWithFreeShipping.getFreeShipping(), True)
+	
+	def test_GetDetailsAsString(self):
+		self.assertEqual(self.theSaleItem.getDetailsAsString(), 'TestItem $10')
